@@ -1,0 +1,26 @@
+{
+  "name": "firebase-iot-boilerplate",
+  "version": "0.1.0",
+  "description": "A simple Firebase boilerplate for an IoT project using the Admin SDK and a Service Account Edit",
+  "main": "publish.js",
+  "dependencies": {
+    "firebase-admin": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garethfoote/firebase-iot-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Gareth Foote <gareth.foote@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/garethfoote/firebase-iot-boilerplate/issues"
+  },
+  "homepage": "https://github.com/garethfoote/firebase-iot-boilerplate#readme"
+}
