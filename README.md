@@ -29,3 +29,51 @@ var appID = 'node-test-001-8b95b'
 ```
 npm install firebase-admin
 ```
+
+#### Run `publish.js` and `subscribe.js`
+
+In two terminal windows run:
+```
+node publish.js
+```
+and
+```  
+node subscribe.js
+```
+
+#### Configure for your needs
+
+1. Change the database reference from the default `sensor/test` to something relevant to your project.
+
+```
+db.ref('sensor/test').set({
+  value: Math.random()
+}).then(function(){
+  console.log('success')
+  // process.exit();
+})
+```
+
+#### Change the Realtime Database 'Rules'
+
+If you want your data to be accessible over HTTP without requiring authentication then change your [Realtime Database Rules](https://console.firebase.google.com/project/_/database/rules) to reflect the following.
+
+```
+{
+  "rules": {
+    ".read": "true",
+    ".write": "auth != null"
+  }
+}
+```
+Essentially to write you need to authenticate, which we do with our Service Account and to read we can access without and restrictions.
+
+#### HTTP API URL
+
+To access the sensor data over HTTP for my example project you would use the following URLs:
+
+`https://node-test-001-8b95b.firebaseio.com/sensor.json`  
+
+or if you want to drill down to my sensor called test:  
+
+`https://node-test-001-8b95b.firebaseio.com/sensor/test.json`
